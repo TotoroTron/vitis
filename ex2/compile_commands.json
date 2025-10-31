@@ -1,0 +1,19 @@
+[
+    {
+        "directory": "/home/bcheng/workspace/dev/vitis/ex2",
+        "file": "aie_srcs/MatMul.cpp",
+        "arguments": [
+            "/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/aietools/bin/aie_clang++",
+            "-std=gnu++17",
+            "-D__AIE_ARCH__=20", "-D__AIE__=1", "-D__AIE_API__=1", "-D__AIE_TARGET__=1",
+            "-I/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/aietools/include",
+            "-I/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/aietools/include/aie",
+            "-I/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/aietools/include/aie_api",
+            "-I/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/include",
+            "-I/home/bcheng/workspace/dev/vitis/ex2",
+            "-I/home/bcheng/workspace/dev/vitis/ex2/aie_srcs",
+            "-c", "aie_srcs/MatMul.cpp",
+            "-o", "/tmp/MatMul.o"
+        ]
+    }
+]
