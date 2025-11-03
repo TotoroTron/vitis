@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "/home/bcheng/workspace/dev/vitis/ex3/dct",
+    "arguments": [
+      "/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/autopilot",
+      "-fhlstoplevel=dct",
+      "-c",
+      "/home/bcheng/workspace/dev/vitis/ex3/dct/./dct.cpp"
+    ],
+    "file": "/home/bcheng/workspace/dev/vitis/ex3/dct/./dct.cpp"
+  },
+  {
+    "directory": "/home/bcheng/workspace/dev/vitis/ex3/dct",
+    "arguments": [
+      "/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/include",
+      "-c",
+      "/home/bcheng/workspace/dev/vitis/ex3/dct/./dct_test.cpp"
+    ],
+    "file": "/home/bcheng/workspace/dev/vitis/ex3/dct/./dct_test.cpp"
+  }
+]

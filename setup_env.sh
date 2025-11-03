@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ============================================================
-#  AMD/Xilinx Vitis 2025.1.1 Environment for VCK190 (Versal AI Core)
+#  Vitis 2025.1.1 Environment for VCK190 (Versal AI Core)
 # ============================================================
 
 # Tool install roots
@@ -36,7 +36,7 @@ source $XILINX_VIVADO/settings64.sh
 # Sanity check
 echo
 echo "============================================================"
-echo " AMD/Xilinx Vitis 2025.1.1 Environment"
+echo " Vitis 2025.1.1 Environment"
 echo "============================================================"
 echo "XILINX_TOOLS:        $XILINX_TOOLS"
 echo "XILINX_VITIS:        $XILINX_VITIS"
@@ -46,5 +46,4 @@ echo "SYSROOT:             $SYSROOT"
 echo "PLATFORM:            $PLATFORM"
 echo "CROSS_COMPILE:       $CROSS_COMPILE"
 echo "============================================================"
-echo "✅ Environment ready. Run: make all"
-echo "============================================================"
+echo

@@ -11,4 +11,9 @@ Setup:
     Remove or comment out line: "export SYSROOT := ..."
     (SYSROOT is redefined in "setup_env.sh")
 
-4) make all
+4) Create AIE license, download from email, put the .lic file into XILINX_TOOLS dir
+    Check Vivado License Manager (VLM) for Host ID.
+    https://docs.amd.com/r/en-US/ug1399-vitis-hls/Supported-Operating-Systems-for-Vitis-HLS
+    (Otherwise make aie fails)
+
+5) make all (or aie, hls, host)
