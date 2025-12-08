@@ -24,3 +24,4 @@ _ide/.wsdata
 _ide/
 .cache/
 /fir/fir/
+/fir/logs/
