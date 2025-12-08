@@ -20,7 +20,6 @@
 _ide/logs
 _ide/.wsdata
 
-# Ignore .cache and inner dct
 _ide/
 .cache/
-/dct/dct/
+/beamformer/beamformer/

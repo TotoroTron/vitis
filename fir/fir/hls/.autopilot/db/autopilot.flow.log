@@ -1,0 +1,1016 @@
+Execute         source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute           source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Thu Nov 20 17:51:16 EST 2025
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute         write_component 
+Execute           source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
+Execute             source /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcllib2.0/yaml/huddle_types.tcl 
+Execute           source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcllib2.0/yaml/json2huddle.tcl 
+Execute             source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcllib2.0/try/try.tcl 
+Execute           send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute         write_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg -apsfile /home/bcheng/workspace/dev/vitis/fir/fir/hls/hls.aps -filepaths relative 
+Execute           send_msg_by_id INFO @200-1915@%s /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-1915] Writing HLS config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute     add_files ./fir/fir.cpp 
+INFO: [HLS 200-1510] Running: add_files ./fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file './fir/fir.cpp' to the project
+Execute     add_files ./fir/fir.h 
+INFO: [HLS 200-1510] Running: add_files ./fir/fir.h 
+INFO: [HLS 200-10] Adding design file './fir/fir.h' to the project
+Execute     add_files -tb ./fir/fir_test.cpp 
+INFO: [HLS 200-1510] Running: add_files -tb ./fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file './fir/fir_test.cpp' to the project
+Execute     set_top fir 
+INFO: [HLS 200-1510] Running: set_top fir 
+Execute     set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+Execute       create_platform xc7z020clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vivado/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.39 sec.
+Execute       source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute         source /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.46 sec.
+Execute     create_clock -period 10 -name sys_clk 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name sys_clk 
+Execute       ap_set_clock -name sys_clk -period 10 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'sys_clk' with a period of 10ns.
+Command   ap_source done; 0.51 sec.
+Execute   cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:05:51 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO-FLOW: AESL_CSIM::c_sim errorInfo:
+
+    while executing
+"::AESL_CSIM::c_sim "$argn" "
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 1.79 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:14:14 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.04 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:15:42 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.1 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:16:38 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.5 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:25:31 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.41 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:29:30 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.66 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 15:43:46 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.56 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:17:01 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO-FLOW: AESL_CSIM::c_sim errorInfo:
+
+    while executing
+"::AESL_CSIM::c_sim "$argn" "
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 2.47 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:21:17 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO-FLOW: AESL_CSIM::c_sim errorInfo:
+
+    while executing
+"::AESL_CSIM::c_sim "$argn" "
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 2.4 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:21:50 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.75 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:29:33 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO-FLOW: AESL_CSIM::c_sim errorInfo:
+
+    while executing
+"::AESL_CSIM::c_sim "$argn" "
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 2.38 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:29:56 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.62 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:32:01 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.3 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:33:02 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.66 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 17:58:05 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.67 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 18:05:11 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.03 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 18:06:20 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO-FLOW: AESL_CSIM::c_sim errorInfo:
+
+    while executing
+"::AESL_CSIM::c_sim "$argn" "
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: AESL_CSIM::csim_cmd_wrap errorInfo:
+4
+    while executing
+"::AESL_CSIM::csim_cmd_wrap $args"
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 2.32 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 18:07:59 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 2.72 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
+Execute       source -notrace -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /home/bcheng/workspace/tools/Xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/bcheng/workspace/dev/vitis/fir/fir/hls opened at Mon Dec 08 18:09:46 EST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-2174@%s%s component /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+INFO: [HLS 200-2174] Applying component config ini file /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg
+Execute       apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(3)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./fir.h' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(4)
+Execute         add_files /home/bcheng/workspace/dev/vitis/fir/fir/fir.h 
+INFO: [HLS 200-10] Adding design file '/home/bcheng/workspace/dev/vitis/fir/fir/fir.h' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./fir_test.cpp' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(5)
+Execute         add_files -tb /home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/bcheng/workspace/dev/vitis/fir/fir/fir_test.cpp' to the project
+Execute         send_msg_by_id INFO @200-1465@%s 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6) 
+INFO: [HLS 200-1465] Applying config ini 'syn.top=fir_opt1' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(6)
+Execute         set_top fir_opt1 
+Execute         send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2) 
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg(2)
+Execute         send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       write_component -config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg 
+Execute         send_msg_by_id INFO @200-2176@%s /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/bcheng/workspace/dev/vitis/fir/fir/vitis-comp.json
+Execute   apply_ini /home/bcheng/workspace/dev/vitis/fir/fir/hls/config.cmdline -iscmdline 
+Execute   ::AP::init_summary_file csim 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csim_design 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 0.33 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 

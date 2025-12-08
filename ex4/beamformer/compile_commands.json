@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "/home/bcheng/workspace/dev/vitis/ex4/beamformer",
+    "arguments": [
+      "/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/autopilot",
+      "-fhlstoplevel=beamformer",
+      "-c",
+      "/home/bcheng/workspace/dev/vitis/ex4/beamformer/../reference_files/beamformer.cpp"
+    ],
+    "file": "/home/bcheng/workspace/dev/vitis/ex4/beamformer/../reference_files/beamformer.cpp"
+  },
+  {
+    "directory": "/home/bcheng/workspace/dev/vitis/ex4/beamformer",
+    "arguments": [
+      "/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/include",
+      "-c",
+      "/home/bcheng/workspace/dev/vitis/ex4/beamformer/../reference_files/beamformer_tb.cpp"
+    ],
+    "file": "/home/bcheng/workspace/dev/vitis/ex4/beamformer/../reference_files/beamformer_tb.cpp"
+  }
+]

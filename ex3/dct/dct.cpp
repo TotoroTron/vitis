@@ -25,6 +25,7 @@ DCT_Outer_Loop:
 
 void dct_2d(dct_data_t in_block[DCT_SIZE][DCT_SIZE],
             dct_data_t out_block[DCT_SIZE][DCT_SIZE]) {
+#pragma HLS PIPELINE II=4
   dct_data_t row_outbuf[DCT_SIZE][DCT_SIZE];
   dct_data_t col_outbuf[DCT_SIZE][DCT_SIZE], col_inbuf[DCT_SIZE][DCT_SIZE];
   unsigned i, j;

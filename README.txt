@@ -1,5 +1,7 @@
 Setup:
 
+0) source setup_env.sh
+
 1) Download "Versal common image" (1.49 GB): 
     https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html
     Extract the tarball.
@@ -17,3 +19,4 @@ Setup:
     (Otherwise make aie fails)
 
 5) make all (or aie, hls, host)
+
