@@ -1,27 +1,7 @@
-# Ignore build output directory
-/build
-/export
 
-# Ignore object files and dependent files
-.o
-.d
+.Xil/
+fir/logs
+fir/reports
+fir/hls
 
-#Ignore logs folder and log files
-/logs
-.log
-
-#Ignore lock files
-.lock
-
-.bin
-.pdi
-.vitisWorkspace.json
-
-_ide/logs
-_ide/.wsdata
-
-# Ignore .cache and inner dct
-_ide/
-.cache/
-/fir/fir/
-/fir/logs/
+*_summary
