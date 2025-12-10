@@ -6,7 +6,7 @@
       "--gcc-toolchain=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0",
       "-fhls",
       "-hls-syn-headers-dir=/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/autopilot",
-      "-fhlstoplevel=fir_opt1",
+      "-fhlstoplevel=fir_opt4",
       "-c",
       "/home/bcheng/workspace/dev/vitis/fir/fir/./fir.cpp"
     ],

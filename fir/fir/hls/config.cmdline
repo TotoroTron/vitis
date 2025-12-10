@@ -1,3 +1,0 @@
-relativeroot=/home/bcheng/workspace/dev/vitis/fir/fir
-original_argv=--mode hls --csim --config /home/bcheng/workspace/dev/vitis/fir/fir/hls_config.cfg --work_dir . 
-

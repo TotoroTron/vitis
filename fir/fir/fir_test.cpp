@@ -62,13 +62,15 @@ int main() {
         data_t hw1_out;
         data_t hw2_out;
         data_t hw3_out;
+        data_t hw4_out;
 
         fir_opt1(&hw1_out, coeffs, raw_signal);
         fir_opt2(&hw2_out, coeffs, raw_signal);
         fir_opt3(&hw3_out, coeffs, raw_signal);
+        fir_opt4(&hw4_out, coeffs, raw_signal);
 
         tbfile << "\n" << t << ": ";
-        if (tb_out != hw1_out || tb_out != hw2_out || tb_out != hw3_out) {
+        if (tb_out != hw1_out || tb_out != hw2_out || tb_out != hw3_out || tb_out != hw4_out) {
             tbfile << "FAIL!" << "\n";
             num_errors++;
         } else {
@@ -78,6 +80,7 @@ int main() {
         tbfile << "\tHW1: " << hw1_out << "\n";
         tbfile << "\tHW2: " << hw2_out << "\n";
         tbfile << "\tHW3: " << hw3_out << "\n";
+        tbfile << "\tHW4: " << hw4_out << "\n";
     }
 
     tbfile << "\n TOTAL ERRORS: " << num_errors;

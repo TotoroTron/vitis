@@ -64,3 +64,25 @@ MAC:
     }
     *dout = (data_t)acc;
 }
+
+void fir_opt4(data_t *dout, coef_t coeffs[FIR_DEPTH], data_t din) {
+    static data_t shift_reg[FIR_DEPTH];
+    acc_t acc;
+    int i;
+TDL:
+    for (i = FIR_DEPTH - 1; i > 1; i = i - 2) {
+        shift_reg[i] = shift_reg[i - 1];
+        shift_reg[i - 1] = shift_reg[i - 2];
+    }
+    if (i == 1) {
+        shift_reg[1] = shift_reg[0];
+    }
+    shift_reg[0] = din;
+    acc = 0;
+MAC:
+    for (i = FIR_DEPTH - 1; i >= 0; i--) {
+#pragma HLS unroll factor = 4
+        acc += shift_reg[i] * coeffs[i];
+    }
+    *dout = (data_t)acc;
+}
