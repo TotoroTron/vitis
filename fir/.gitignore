@@ -7,6 +7,12 @@ _ide/
 /fir/.cache/
 /fir/logs/
 /fir/reports/
+
 /fir/hls/
+!/fir/hls/csim/build/*.txt
+!/fir/hls/syn/verilog/
+!/fir/hls/syn/vhdl/
+!/fir/hls/impl/verilog/
+!/fir/hls/impl/vhdl/
 
 *_summary
