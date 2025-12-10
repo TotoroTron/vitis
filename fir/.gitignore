@@ -1,26 +1,31 @@
-
+# tool junk 
+*_summary
 .cache/
 .Xil/
 _ide/
-*_summary
 
+fir/.Xil/
+fir/.cache/
 fir/logs/
 fir/reports/
-fir/hls/*
 
-fir/hls/csim/*
-!fir/hls/csim/build/
+# ignore everything under fir/hls
+fir/hls/**
+
+# re-include directories under fir/hls so Git can descend into them
+!fir/hls/
+!fir/hls/**/
+
+# keep only specific files:
+
+# tbfile.txt
 !fir/hls/csim/build/*.txt
 
-fir/hls/syn/*
-!fir/hls/syn/verilog/
+# syn hdl files
 !fir/hls/syn/verilog/*.v
-!fir/hls/syn/vhdl/
 !fir/hls/syn/vhdl/*.vhd
 
-fir/hls/impl/*
-!fir/hls/impl/verilog/
+# impl hdl files
 !fir/hls/impl/verilog/*.v
-!fir/hls/impl/vhdl/
 !fir/hls/impl/vhdl/*.vhd
 
