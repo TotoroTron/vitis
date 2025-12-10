@@ -1,6 +1,7 @@
 
-.cache
-.Xil
+.cache/
+.Xil/
+_ide/
 
 /fir/.Xil/
 /fir/.cache/
