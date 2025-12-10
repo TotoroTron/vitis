@@ -1,5 +1,4 @@
 # tool junk 
-*_summary
 .cache/
 .Xil/
 _ide/
@@ -29,3 +28,6 @@ fir/hls/**
 !fir/hls/impl/verilog/*.v
 !fir/hls/impl/vhdl/*.vhd
 
+# other output files
+*.zip
+*_summary

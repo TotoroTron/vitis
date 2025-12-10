@@ -1,0 +1,12 @@
+CompileFlags:
+  Add:
+    - -I/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/common/technology/autopilot
+    - -I/home/bcheng/workspace/tools/Xilinx/2025.1.1/Vitis/include
+
+  # optional - silence vitis-specific flags clangd doesn't understand
+  Remove:
+    - -fhls
+    - -fhls-tb
+    - -fhlstoplevel=*
+    - -hls-syn-headers-dir=*
+    - -hls-sim-headers-dir=*
