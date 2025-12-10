@@ -9,10 +9,21 @@ _ide/
 /fir/reports/
 
 /fir/hls/*
+
+/fir/hls/csim/*
+/fir/hls/csim/build/
 !/fir/hls/csim/build/*.txt
+
+/fir/hls/syn/*
 !/fir/hls/syn/verilog/
+!/fir/hls/syn/verilog/*.v
 !/fir/hls/syn/vhdl/
+!/fir/hls/syn/vhdl/*.vhd
+
+/fir/hls/impl/*
 !/fir/hls/impl/verilog/
+!/fir/hls/impl/verilog/*.v
 !/fir/hls/impl/vhdl/
+!/fir/hls/impl/vhdl/*.vhd
 
 *_summary
