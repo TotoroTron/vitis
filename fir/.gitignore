@@ -2,7 +2,10 @@
 .cache/
 .Xil/
 _ide/
+*_summary
 
+fir/logs/
+fir/reports/
 fir/hls/*
 
 fir/hls/csim/*
@@ -21,4 +24,3 @@ fir/hls/impl/*
 !fir/hls/impl/vhdl/
 !fir/hls/impl/vhdl/*.vhd
 
-*_summary
