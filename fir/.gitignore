@@ -11,7 +11,7 @@ _ide/
 /fir/hls/*
 
 /fir/hls/csim/*
-/fir/hls/csim/build/
+!/fir/hls/csim/build/
 !/fir/hls/csim/build/*.txt
 
 /fir/hls/syn/*
