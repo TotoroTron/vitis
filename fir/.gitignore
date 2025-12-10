@@ -1,7 +1,11 @@
 
-.Xil/
-fir/logs
-fir/reports
-fir/hls
+.cache
+.Xil
+
+/fir/.Xil/
+/fir/.cache/
+/fir/logs/
+/fir/reports/
+/fir/hls/
 
 *_summary
